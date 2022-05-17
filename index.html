@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>ML Implementations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        font-family: 'Inter', sans-serif;
+        color: #000;
+        padding: 0;
+        margin: 0;
+        transition: all 0.3s;
+    }
+    h1{
+        font-size: 32px;
+        margin-top: 14px;
+        text-align: center;
+    }
+    h5{
+        font-size: 12px;
+        letter-spacing: 5px;
+        text-align: center;
+        font-weight: 400;
+    }
+    li{
+        vertical-align: middle;
+        align-items: center;
+        display: flex;
+        font-size: 16px;
+        padding: 8px 0;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    }
+    li:first-child{
+        border-top: 2px solid rgba(0, 0, 0, 0.1);
+    }
+    .title{
+        justify-self: stretch;
+        flex: 1;
+        padding: 0 8px;
+    }
+    li div{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-left: 4px;
+    }
+    .row-b{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        margin-left: 8px;
+    }
+    .button{
+        border-radius: 3px;
+        font-size: 14px;
+        margin: 2px;
+        padding: 8px;
+        background-color: #000;
+        color:#fff;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .button:hover{
+        opacity: 0.6;
+    }
+    .green{
+        background-color: rgb(20, 197, 0);
+    }
+    .orange{
+        background-color: rgb(255, 157, 0);
+    }
+    header{
+        max-width: 856px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+    .paper{
+        background-color: #fff;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+        margin: 18px auto;
+        padding: 18px 12px;
+    }
+    body{
+        background-color: #fafafa;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px;
+        max-width: 856px;
+        margin: 0 auto;
+
+    }
+    footer {
+        margin-top: auto;
+        display: flex;
+        padding: 12px;
+        margin: 0;
+        justify-content: center;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .logo {
+        padding: 8px;
+        display: flex;
+        flex-wrap: nowrap;
+        text-align: left;
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        flex: 1;
+        opacity: 0.8;
+    }
+
+    .logo-img {
+        user-select: none;
+        -webkit-user-drag: none;
+        object-fit: contain;
+        margin: 8px;
+    }
+
+    .logo-text {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .logo-text * {
+        line-height: 1;
+    }
+
+    .logo-text .b {
+        font-weight: 700;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <h5>PROSAMVA</h5>
+            <h1>Implementations of Machine Learning<br> Algorithms &amp; Applications</h1>
+        </header>
+        <div class="paper">
+            <div class="row-b">
+                <h3>Contents</h3>
+                <a href="https://github.com/Prosamva/ML-Implementations" class="button">Visit Repository</a>
+            </div>
+            <ul id="list"></ul>
+        </div>
+    <footer>
+        <a href="https://github.com/Prosamva">
+            <div class="logo">
+                <img class="logo-img" height="52px" src="img/tlb.png" alt="Prosamva Logo" />
+                <div class="logo-text">
+                    <div><span class="b">PRO</span>GRAMMER</div>
+                    <div><span class="b">SAM</span>UEL</div>
+                    <div><span class="b">VA</span>SAMSETTI</div>
+                </div>
+            </div>
+        </a>
+    </footer>
+    </div>
+    
+    <script>
+        var contents=`
+        
+        One-Vs-One & One-Vs-Rest Classification using Logistic Regression | OvR-OvO-LogisticRegression
+        Decision Trees (ID3) &amp; Random Forests | DecisionTrees-RandomForest
+        K-Means &amp; Image Segmentation | K-Means-Image-Segmentation
+        Locally Linear Embedding for Dimensionality Reduction | Locally-Linear-Embedding
+        COVID X-Ray Classification using Logistic Regression | COVID-X-ray-ML
+        
+        `.trim().split('\n');
+        
+        var lis = '';
+        for(var content of contents){
+            content = content.split('|').map(s => s.trim());
+            lis+=`
+            <li>
+                <span class="title">${content[0]}</span>
+                <div>
+                    <a href="html/${content[1]}.html" class="green button">View</a>
+                    <a href="jupyter/${content[1]}.ipynb" class="orange button">Notebook</a>
+                </div>
+            </li>`
+        }
+        document.getElementById("list").innerHTML = lis;
+    </script>
+</body>
+
+</html>
