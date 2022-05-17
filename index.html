@@ -12,25 +12,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <style>
-    *{
+    * {
         font-family: 'Inter', sans-serif;
         color: #000;
         padding: 0;
         margin: 0;
         transition: all 0.3s;
     }
-    h1{
+
+    h1 {
         font-size: 32px;
         margin-top: 14px;
         text-align: center;
     }
-    h5{
+
+    h5 {
         font-size: 12px;
         letter-spacing: 5px;
         text-align: center;
         font-weight: 400;
     }
-    li{
+
+    li {
         vertical-align: middle;
         align-items: center;
         display: flex;
@@ -38,61 +41,73 @@
         padding: 8px 0;
         border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     }
-    li:first-child{
+
+    li:first-child {
         border-top: 2px solid rgba(0, 0, 0, 0.1);
     }
-    .title{
+
+    .title {
         justify-self: stretch;
         flex: 1;
         padding: 0 8px;
     }
-    li div{
+
+    li div {
         display: flex;
         align-items: center;
         flex-wrap: nowrap;
         margin-left: 4px;
     }
-    .row-b{
+
+    .row-b {
         display: flex;
-        justify-content:space-between;
+        justify-content: space-between;
         align-items: center;
         margin-bottom: 12px;
         margin-left: 8px;
     }
-    .button{
+
+    .button {
         border-radius: 3px;
         font-size: 14px;
         margin: 2px;
         padding: 8px;
         background-color: #000;
-        color:#fff;
+        color: #fff;
         font-weight: 500;
         text-decoration: none;
     }
-    .button:hover{
+
+    .button:hover {
         opacity: 0.6;
     }
-    .green{
+
+    .green {
         background-color: rgb(20, 197, 0);
     }
-    .orange{
+
+    .orange {
         background-color: rgb(255, 157, 0);
     }
-    header{
+
+    header {
         max-width: 856px;
         margin: 0 auto;
         padding: 24px;
     }
-    .paper{
+
+    .paper {
         background-color: #fff;
         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
         margin: 18px auto;
         padding: 18px 12px;
     }
-    body{
+
+    body {
         background-color: #fafafa;
     }
-    .container{
+
+    .container {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -103,6 +118,7 @@
         margin: 0 auto;
 
     }
+
     footer {
         margin-top: auto;
         display: flex;
@@ -164,22 +180,22 @@
             </div>
             <ul id="list"></ul>
         </div>
-    <footer>
-        <a href="https://github.com/Prosamva">
-            <div class="logo">
-                <img class="logo-img" height="52px" src="img/tlb.png" alt="Prosamva Logo" />
-                <div class="logo-text">
-                    <div><span class="b">PRO</span>GRAMMER</div>
-                    <div><span class="b">SAM</span>UEL</div>
-                    <div><span class="b">VA</span>SAMSETTI</div>
+        <footer>
+            <a href="https://github.com/Prosamva">
+                <div class="logo">
+                    <img class="logo-img" height="52px" src="img/tlb.png" alt="Prosamva Logo" />
+                    <div class="logo-text">
+                        <div><span class="b">PRO</span>GRAMMER</div>
+                        <div><span class="b">SAM</span>UEL</div>
+                        <div><span class="b">VA</span>SAMSETTI</div>
+                    </div>
                 </div>
-            </div>
-        </a>
-    </footer>
+            </a>
+        </footer>
     </div>
-    
+
     <script>
-        var contents=`
+        var contents = `
         
         One-Vs-One & One-Vs-Rest Classification using Logistic Regression | OvR-OvO-LogisticRegression
         Decision Trees (ID3) &amp; Random Forests | DecisionTrees-RandomForest
@@ -188,16 +204,16 @@
         COVID X-Ray Classification using Logistic Regression | COVID-X-ray-ML
         
         `.trim().split('\n');
-        
+
         var lis = '';
-        for(var content of contents){
+        for (var content of contents) {
             content = content.split('|').map(s => s.trim());
-            lis+=`
+            lis += `
             <li>
                 <span class="title">${content[0]}</span>
                 <div>
                     <a href="html/${content[1]}.html" class="green button">View</a>
-                    <a href="jupyter/${content[1]}.ipynb" class="orange button">Notebook</a>
+                    <a href="https://github.com/Prosamva/ML-Implementations/blob/master/jupyter/${content[1]}.ipynb" class="orange button">Notebook</a>
                 </div>
             </li>`
         }
